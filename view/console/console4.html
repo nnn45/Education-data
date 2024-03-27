@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>控制后台</title>
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="stylesheet" href="../../component/pear/css/pear.css" />
+	<link rel="stylesheet" href="../../admin/css/other/console1.css" />
+</head>
+
+<body class="pear-container">
+	<div>
+		
+		<div class="layui-row layui-col-space10">
+			<div class="layui-col-md6">
+				<div class="layui-card">
+					<div class="layui-card-body">
+						<div class="layui-tab custom-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+							<div id="echarts-records" style="background-color:#ffffff;min-height:500px;padding: 10px">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="layui-col-md6">
+				<div class="layui-card">
+					<div class="layui-card-body">
+						<div class="layui-tab custom-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+							<div id="echarts-records2" style="background-color:#ffffff;min-height:500px;padding: 10px">
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<!--</div>-->
+	<script src="../../component/layui/layui.js"></script>
+	<script src="../../component/pear/pear.js"></script>
+	<script>
+		layui.use(['layer', 'echarts', 'element', 'count'], function () {
+			var $ = layui.jquery,
+				layer = layui.layer,
+				element = layui.element,
+				count = layui.count,
+				echarts = layui.echarts;
+
+			count.up("value1", {
+				time: 4000,
+				num: 30219,
+
+				regulator: 50
+			})
+
+			count.up("value2", {
+				time: 4000,
+				num: 17998,
+
+				regulator: 50
+			})
+
+			count.up("value3", {
+				time: 4000,
+				num: 16553,
+
+				regulator: 50
+			})
+			count.up("value4", {
+				time: 4000,
+				num: 510,
+
+				regulator: 50
+			})
+
+
+			var echartsRecords = echarts.init(document.getElementById('echarts-records'), 'walden');
+			var echartsRecords2 = echarts.init(document.getElementById('echarts-records2'), 'walden')
+
+			var option = {
+				tooltip: {
+					trigger: 'item'
+				},
+				legend: {
+					top: '5%',
+					left: 'center'
+				},
+				series: [
+					{
+						name: 'Access From',
+						type: 'pie',
+						radius: ['40%', '70%'],
+						avoidLabelOverlap: false,
+						itemStyle: {
+							borderRadius: 10,
+							borderColor: '#fff',
+							borderWidth: 2
+						},
+						label: {
+							show: false,
+							position: 'center'
+						},
+						emphasis: {
+							label: {
+								show: true,
+								fontSize: 40,
+								fontWeight: 'bold'
+							}
+						},
+						labelLine: {
+							show: false
+						},
+						data: [
+							{ name: 'Windows NT', value: 1377777 },
+							{ name: 'Windows 98', value: 129518 },
+							{ name: 'Windows 95', value: 89805 },
+							{ name: '未知操作系统', value: 88950 },
+							{ name: 'Linux', value: 55347 },
+							{ name: 'Windows 2000', value: 184 },
+							{ name: 'Windows XP', value: 80 },
+							{ name: 'Windows 32', value: 58 }
+						]
+					}
+				]
+			};
+			var option2 = {
+				
+				tooltip: {
+					trigger: 'item'
+				},
+				legend: {
+					orient: 'vertical',
+					left: 'left'
+				},
+				series: [
+					{
+						name: 'Access From',
+						type: 'pie',
+						radius: '50%',
+						data: [
+							{ value: 1656494, name: '计算机' },
+							{ value: 85225, name: '移动端' }
+							
+						],
+						emphasis: {
+							itemStyle: {
+								shadowBlur: 10,
+								shadowOffsetX: 0,
+								shadowColor: 'rgba(0, 0, 0, 0.5)'
+							}
+						}
+					}
+				]
+			};
+			echartsRecords.setOption(option);
+			echartsRecords2.setOption(option2)
+			window.onresize = function () {
+				echartsRecords.resize();
+				echartsRecords2.resize();
+			}
+
+		});
+	</script>
+</body>
+
+</html>
