@@ -9,13 +9,13 @@
 	height: 44px !important;
 	line-height: 44px !important;
 	font-size: 16px !important;
-	background-color: #5FB878 !important;
+	background-color: #3963bc !important;
 	font-weight: 550 !important;
 }
 
 .layui-form-checked[lay-skin=primary] i {
-	border-color: #5FB878 !important;
-	background-color: #5FB878 !important;
+	border-color: #3963bc !important;
+	background-color: #3963bc !important;
 	color: #fff !important;
 }
 
@@ -37,7 +37,7 @@
 }
 
 .layui-input:focus {
-	box-shadow: 0px 0px 2px 1px #5FB878 !important;
+	box-shadow: 0px 0px 2px 1px #3963bc !important;
 }
 
 .layui-form-danger:focus{
@@ -55,7 +55,7 @@
 	font-size: 30px !important;
 	font-weight: 550 !important;
 	margin-left: 20px !important;
-	color: #5FB878 !important;
+	color: #3963bc !important;
 	display: inline-block !important;
 	height: 60px !important;
 	line-height: 60px !important;
