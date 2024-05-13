@@ -452,6 +452,7 @@ layui.define(['message', 'table', 'jquery', 'element', 'yaml', 'form', 'tab', 'm
 		}
 
 		body.on("click", ".logout", function() {
+			console.log(logout())
 			if (logout() && bodyTab) {
 				bodyTab.clear();
 			}

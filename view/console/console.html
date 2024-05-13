@@ -6,17 +6,23 @@
     <meta charset="utf-8">
     <title>企业营收大数据统计html页面图表</title>
     <script type="text/javascript" src="../../component/shujudaping/js/jquery.js"></script>
-    <script type="text/javascript" src="../../component/shujudaping/js/echarts.min.js"></script>
-    <script type="text/javascript" src="../../component/shujudaping/js/js.js"></script>
     <script type="text/javascript" src="../../component/shujudaping/js/jquery.liMarquee.js"></script>
     <script type="text/javascript" src="../../component/shujudaping/js/jquery.cxselect.min.js"></script>
+    
+    <script type="text/javascript" src="../../component/shujudaping/js/echarts.min.js"></script>
+    <script type="text/javascript" src="../../component/shujudaping/js/echarts-wordcloud.min.js"></script>
+    <script src="../../component/pear/module/echarts.js"></script>
+    <script src="../../component/shujudaping/js/echarts-wordcloud.js"></script>
+
+    <script type="text/javascript" src="../../component/shujudaping/js/js.js"></script>
+   
     <link rel="stylesheet" href="../../component/shujudaping/css/comon0.css">
 </head>
 
 <body>
     <div style="background:#000d4a url(../../component/shujudaping/img/bg.jpeg) center top;">
         <div class="loading">
-            <div class="loadbox"><img src="img/loading.gif">页面加载中...</div>
+            <div class="loadbox"><img src="../../component/shujudaping/img/loading.gif">页面加载中...</div>
         </div>
         <div class="back"></div>
         
@@ -24,82 +30,140 @@
             <ul class="clearfix">
                 <li>
                     <div class="boxall" style="height:400px;">
-                        <div class="alltitle">标题样式</div>
-                        <div class="navboxall" id="echart5"></div>
-                    </div>
-                    <div class="boxall" style="height:260px;">
-                        <div class="alltitle">标题样式</div>
+                        <div class="alltitle">热门课程</div>
+                        
+                        <!-- <div class="navboxall" id="echart5"> </div> -->
                         <div class="navboxall">
-                            <div class="wraptit"><span>单号</span><span>金额</span><span>品名</span><span>时间</span></div>
+                            <div class="wraptit"><span style="width: 70%;">课程名称</span><span style="width: 30%;">报名人数</span></div>
+                            <div class="wrap ">
+                                <ul >
+                                    <li>  
+                                        <p><span style="width: 70%;" class="tooltip" data-tooltip="2915-大数据技术应用（Python方向）">2915-大数据技术应用...</span><span style="width: 30%;">543</span></p>  
+                                    </li>  
+                                    <li>  
+                                        <p><span style="width: 70%;" class="tooltip" data-tooltip="6148-数据分析师（高级）">6148-数据分析师（高...</span><span style="width: 30%; ">467</span></p>  
+                                    </li>  
+                                    <li>  
+                                        <p><span style="width: 70%;" class="tooltip" data-tooltip="5076-Python技术应用（高级）">5076-Python技术应用...</span><span style="width: 30%;">419</span></p>  
+                                    </li>  
+                                    <li>  
+                                        <p><span style="width: 70%;" class="tooltip" data-tooltip="2676-大数据技术应用（高级-Python方向）">2676-大数据技术应用...</span><span style="width: 30%;">348</span></p>  
+                                    </li>  
+                                    <li>  
+                                        <p><span style="width: 70%;" class="tooltip" data-tooltip="11975-大数据应用开发（Python）职业技能等级证书（中级）">11975-大数据应用开发...</span><span style="width: 30%; ">347</span></p>  
+                                    </li>  
+                                    <li>  
+                                        <p><span style="width: 70%;" class="tooltip" data-tooltip="11164-大数据应用开发（Python）职业技能等级证书（中级）">11164-大数据应用开发...</span><span style="width: 30%; ">311</span></p>  
+                                    </li>  
+                                    <li>  
+                                        <p><span style="width: 70%;" class="tooltip" data-tooltip="2625-大数据技术应用（Python方向）">2625-大数据技术应用...</span><span style="width: 30%; ">290</span></p>  
+                                    </li>  
+                                    <li>  
+                                        <p><span style="width: 70%;" class="tooltip" data-tooltip="6845-Python数据分析概述">6845-Python数据分析...</span><span style="width: 30%;">249</span></p>  
+                                    </li>  
+                                    <li>  
+                                        <p><span style="width: 70%;" class="tooltip" data-tooltip="779-Python数据分析概述">779-Python数据分析...</span><span style="width: 30%; ">245</span></p>  
+                                    </li>  
+                                    <li>  
+                                        <p><span style="width: 70%;" class="tooltip" data-tooltip="9781-大数据应用开发（Python）职业技能等级证书（初级）">9781-大数据应用开发...</span><span style="width: 30%;">239</span></p>  
+                                    </li>
+                                  
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="boxall" style="height:520px;">
+                        <div class="alltitle">用户动态</div>
+                        <div class="navboxall">
+                            <div class="wraptit"><span>用户ID</span><span>登录设备</span><span>登录时间</span></div>
                             <div class="wrap">
                                 <ul>
-                                    <li>
-                                        <p><span>100021415</span><span>199</span><span>手机</span><span>18小时</span></p>
-                                    </li>
-                                    <li>
-                                        <p><span>100021415</span><span>199</span><span>手机</span><span>18小时</span></p>
-                                    </li>
-                                    <li>
-                                        <p><span>100021415</span><span>199</span><span>手机</span><span>18小时</span></p>
-                                    </li>
-                                    <li>
-                                        <p><span>100021415</span><span>199</span><span>手机</span><span>18小时</span></p>
-                                    </li>
-                                    <li>
-                                        <p><span>100021415</span><span>199</span><span>手机</span><span>18小时</span></p>
-                                    </li>
-                                    <li>
-                                        <p><span>100021415</span><span>199</span><span>手机</span><span>18小时</span></p>
-                                    </li>
-                                    <li>
-                                        <p><span>100021415</span><span>199</span><span>手机</span><span>18小时</span></p>
-                                    </li>
-                                    <li>
-                                        <p><span>100021415</span><span>199</span><span>手机</span><span>18小时</span></p>
-                                    </li>
-                                    <li>
-                                        <p><span>100021415</span><span>199</span><span>手机</span><span>18小时</span></p>
+                                    <li>  
+                                        <p><span>142708</span><span>计算机</span><span>2023/1/9</span></p>  
+                                    </li>  
+                                    <li>  
+                                        <p><span>142708</span><span>计算机</span><span>2023/1/9</span></p>  
+                                    </li>  
+                                    <li>  
+                                        <p><span>57937</span><span>计算机</span><span>2023/1/9</span></p>  
+                                    </li>  
+                                    <li>  
+                                        <p><span>57937</span><span>计算机</span><span>2023/1/9</span></p>  
+                                    </li>  
+                                    <li>  
+                                        <p><span>9464</span><span>计算机</span><span>2023/1/9</span></p>  
+                                    </li>  
+                                    <li>  
+                                        <p><span>9464</span><span>计算机</span><span>2023/1/9</span></p>  
+                                    </li>  
+                                    <li>  
+                                        <p><span>158506</span><span>计算机</span><span>2023/1/9</span></p>  
+                                    </li>  
+                                    <li>  
+                                        <p><span>158506</span><span>计算机</span><span>2023/1/9</span></p>  
+                                    </li>  
+                                    <li>  
+                                        <p><span>136926</span><span>计算机</span><span>2023/1/9</span></p>  
+                                    </li>  
+                                    <li>  
+                                        <p><span>136926</span><span>计算机</span><span>2023/1/9</span></p>  
+                                    </li>  
+                                    <li>  
+                                        <p><span>82089</span><span>计算机</span><span>2023/1/9</span></p>  
+                                    </li>  
+                                    <li>  
+                                        <p><span>158445</span><span>计算机</span><span>2023/1/9</span></p>  
+                                    </li>  
+                                    <li>  
+                                        <p><span>159507</span><span>移动端</span><span>2023/1/9</span></p>  
+                                    </li>  
+                                    <li>  
+                                        <p><span>93879</span><span>计算机</span><span>2023/1/9</span></p>  
                                     </li>
                                 </ul>
                             </div>
                         </div>
                     </div>
-                    <div class="boxall" style="height:260px;">
+                    <!-- <div class="boxall" style="height:260px;">
                         <div class="alltitle">标题样式</div>
                         <div class="navboxall" id="echart1"></div>
-                    </div>
+                    </div> -->
                 </li>
                 <li>
                     <div class="boxall" style="height:230px">
                         <div class="clearfix navboxall" style="height: 100%">
                             <div class="pulll_left num">
-                                <div class="numbt">总体情况<span>(单位：元)</span></div>
-                                <div class="numtxt">19382721</div>
+                                <div class="numbt">用户总人数<span>(单位：人)</span></div>
+                                <div class="numtxt">142250</div>
                             </div>
                             <div class="pulll_right zhibiao">
-                                <div class="zb1"><span>标题样式</span>
+                                <div class="zb1"><span>流失用户</span>
                                     <div id="zb1"></div>
                                 </div>
-                                <div class="zb2"><span>标题样式</span>
+                                <div class="zb2"><span>活跃用户</span>
                                     <div id="zb2"></div>
                                 </div>
-                                <div class="zb3"><span>标题样式</span>
+                                <div class="zb3"><span>潜在用户</span>
                                     <div id="zb3"></div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="boxall" style="height:350px">
-                        <div class="alltitle">标题样式</div>
+                        <div class="alltitle">24小时用户活跃度</div>
                         <div class="navboxall" id="echart4"></div>
                     </div>
                     <div class="boxall" style="height:340px">
-                        <div class="alltitle">标题样式</div>
+                        <div class="alltitle">各月份活跃度</div>
                         <div class="navboxall" id="echart3"></div>
                     </div>
                 </li>
                 <li>
-                    <div class="boxall" style="height:300px">
+                    <div class="boxall" style="height:400px">
+                        <div class="alltitle">用户常用操作系统</div>
+                        <div class="navboxall" id="echart1"></div>
+                    </div>
+                    <!-- <div class="boxall" style="height: 300px">
                         <div class="alltitle">标题样式</div>
                         <div class="navboxall">
                             <table class="table1" width="100%" border="0" cellspacing="0" cellpadding="0">
@@ -143,54 +207,11 @@
                                 </tbody>
                             </table>
                         </div>
-                    </div>
-                    <div class="boxall" style="height: 300px">
-                        <div class="alltitle">标题样式</div>
-                        <div class="navboxall">
-                            <table class="table1" width="100%" border="0" cellspacing="0" cellpadding="0">
-                                <tbody>
-                                    <tr>
-                                        <th scope="col">排名</th>
-                                        <th scope="col">公司</th>
-                                        <th scope="col">数量</th>
-                                        <th scope="col">增长率</th>
-                                    </tr>
-                                    <tr>
-                                        <td><span>1</span></td>
-                                        <td>腾讯科技</td>
-                                        <td>114万<br></td>
-                                        <td>100%<br></td>
-                                    </tr>
-                                    <tr>
-                                        <td><span>2</span></td>
-                                        <td>百度公司</td>
-                                        <td>923823万</td>
-                                        <td>21%</td>
-                                    </tr>
-                                    <tr>
-                                        <td><span>3</span></td>
-                                        <td>新浪</td>
-                                        <td>1240253万</td>
-                                        <td>12%</td>
-                                    </tr>
-                                    <tr>
-                                        <td><span>4</span></td>
-                                        <td>网易</td>
-                                        <td>1.2亿</td>
-                                        <td>39%</td>
-                                    </tr>
-                                    <tr>
-                                        <td><span>5</span></td>
-                                        <td>雅虎</td>
-                                        <td>13423万</td>
-                                        <td>9%</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                    </div> -->
+                    <div class="boxall" style="height:520px">
+                        <div class="alltitle">
+                            学习流程转化
                         </div>
-                    </div>
-                    <div class="boxall" style="height:320px">
-                        <div class="alltitle">标题样式</div>
                         <div class="navboxall" id="echart2"></div>
                     </div>
                 </li>

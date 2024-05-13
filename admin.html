@@ -47,7 +47,7 @@
 						</dl>
 					</li>
 					<!-- 主 题 配 置 -->
-					<!-- <li class="layui-nav-item setting"><a href="#" class="layui-icon layui-icon-more-vertical"></a></li> -->
+<!--					 <li class="layui-nav-item setting"><a href="#" class="layui-icon layui-icon-more-vertical"></a></li>-->
 				</ul>
 			</div>
 			<!-- 侧 边 区 域 -->
@@ -106,20 +106,24 @@
 				admin.setConfigPath("config/pear.config.yml");
 				// admin.setConfigType("json");
 				// admin.setConfigPath("config/pear.config.json");
-				admin.render();
 				
-				// 登出逻辑 
+				
+				// 登出逻辑
+			
 				admin.logout(function(){
+					
 					popup.success("注销成功",function(){
 						location.href = "index.html";
 					})
 					// 注销逻辑 返回 true / false
 					return true;
 				})
-				
+				admin.render();
 				// 自定义消息点击回调
 				admin.message(function(id, title, context, form) {});
+				
 			})
+			
 		</script>		
 	</body>
 </html>

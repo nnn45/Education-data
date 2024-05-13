@@ -1,130 +1,39 @@
+# Education-data
 
-<div align="center">
+#### 介绍
+{**以下是 Gitee 平台说明，您可以替换此简介**
+Gitee 是 OSCHINA 推出的基于 Git 的代码托管平台（同时支持 SVN）。专为开发者提供稳定、高效、安全的云端软件开发协作平台
+无论是个人、团队、或是企业，都能够用 Gitee 实现代码托管、项目管理、协作开发。企业项目请看 [https://gitee.com/enterprises](https://gitee.com/enterprises)}
 
-<br/>
-<br/>
-
-  <h1 align="center">
-    Pear Admin Layui
-  </h1>
-  <h4 align="center">
-    开 箱 即 用 的 前 后 端 解 决 方 案
-  </h4> 
-
-  [预 览](http://layui.pearadmin.com)   |   [官 网](http://www.pearadmin.com/)   |   [群聊](https://jq.qq.com/?_wv=1027&k=TkLAKUxC) |   [文档](http://www.pearadmin.com/doc) |   [layui 镜像站](http://layui-doc.pearadmin.com)
+#### 软件架构
+软件架构说明
 
 
-</div>
+#### 安装教程
 
-<p align="center">
-    <a href="#">
-        <img src="https://img.shields.io/badge/Pear Admin Layui-3.9.0+-green.svg" alt="Pear Admin Layui Version">
-    </a>
-    <a href="#">
-        <img src="https://img.shields.io/badge/JQuery-2.0+-green.svg" alt="Jquery Version">
-    </a>
-      <a href="#">
-        <img src="https://img.shields.io/badge/Layui-2.7.0+-green.svg" alt="Layui Version">
-    </a>
-</p>
-<br>
-<div align="center">
-  <img  width="92%" style="border-radius:10px;margin-top:20px;margin-bottom:20px;box-shadow: 2px 0 6px gray;" src="admin/images/show.png" />
-</div>
-<br>
+1.  xxxx
+2.  xxxx
+3.  xxxx
 
-### 项目介绍
+#### 使用说明
 
-<p style="padding:10px;"  width="90%">
+1.  xxxx
+2.  xxxx
+3.  xxxx
 
-Pear Admin 是一款开箱即用的前端开发模板，扩展Layui原生UI样式，整合第三方开源组件，提供便捷快速的开发方式，延续LayuiAdmin
+#### 参与贡献
 
-的设计风格，持续完善的样式与组件的维护，基于异步Ajax的菜单构建，相对完善的多标签页，单标签页的共存，为使用者提
+1.  Fork 本仓库
+2.  新建 Feat_xxx 分支
+3.  提交代码
+4.  新建 Pull Request
 
-供相对完善的开发方案，只为成为更好的轮子，项目不定时更新，建议 Star watch 一份
 
-若你需要更多版本，请前往 [Pear Admin](https://gitee.com/pear-admin)
+#### 特技
 
-</p>
-
-### 项目结构
-
-```
-Pear Admin Layui
-│
-├─admin 资源
-│    │
-│    ├─css 样式
-│    │
-│    ├─data 数据
-│    │
-│    └─images 图片
-│
-├─component 组件
-│    │
-│    ├─code 设计器
-│    │
-│    ├─layui 框架
-│    │
-│    └─pear 封装
-│
-├─config 配置
-│    │
-│    ├─pear.config.yml 配置文件
-│    │
-│    └─pear.config.json 配置文件
-│
-├─view 视图
-│    │
-│    ├─console 首页
-│    │
-│    ├─document 文档
-│    │
-│    ├─echarts 图表
-│    │
-│    ├─error 错误页
-│    │
-│    ├─result 结果页
-│    │
-│    └─system 系统管理
-│
-├─index 入口
-│
-└─login 登录
-
-```
-
-### 项目截图
-
-|  |  |
-|---------------------|---------------------|
-|![输入图片说明](https://images.gitee.com/uploads/images/2021/0331/221841_9d135fe6_4835367.png "屏幕截图.png")  | ![输入图片说明](https://images.gitee.com/uploads/images/2021/0331/221901_b5282417_4835367.png "屏幕截图.png")  |
-|![输入图片说明](https://images.gitee.com/uploads/images/2021/0331/221920_84f71864_4835367.png "屏幕截图.png")|  ![输入图片说明](https://images.gitee.com/uploads/images/2021/0331/221953_eacb1578_4835367.png "屏幕截图.png")  |
-|![输入图片说明](https://images.gitee.com/uploads/images/2021/0331/222007_334b5411_4835367.png "屏幕截图.png")| ![输入图片说明](https://images.gitee.com/uploads/images/2021/0331/222020_ed5e67ac_4835367.png "屏幕截图.png")  |
-|![输入图片说明](https://images.gitee.com/uploads/images/2021/0331/222105_9a1036c6_4835367.png "屏幕截图.png")|  ![输入图片说明](https://images.gitee.com/uploads/images/2021/0331/222116_50936543_4835367.png "屏幕截图.png")   |
-|![输入图片说明](https://images.gitee.com/uploads/images/2021/0331/222150_6251bb30_4835367.png "屏幕截图.png")|  ![输入图片说明](https://images.gitee.com/uploads/images/2021/0331/222206_777ccf74_4835367.png "屏幕截图.png")  |
-|![输入图片说明](https://images.gitee.com/uploads/images/2021/0331/222315_712d2942_4835367.png "屏幕截图.png")|![输入图片说明](https://images.gitee.com/uploads/images/2021/0331/222345_2629d03c_4835367.png "屏幕截图.png")   |
-|![输入图片说明](https://images.gitee.com/uploads/images/2021/0331/222410_e83792fa_4835367.png "屏幕截图.png")| ![输入图片说明](https://images.gitee.com/uploads/images/2021/0331/222431_5b884442_4835367.png "屏幕截图.png")   |
-|![输入图片说明](https://images.gitee.com/uploads/images/2021/0331/222453_b02034b2_4835367.png "屏幕截图.png")| ![输入图片说明](https://images.gitee.com/uploads/images/2021/0331/222508_fec3ad5e_4835367.png "屏幕截图.png")   |
-|![输入图片说明](https://images.gitee.com/uploads/images/2021/0331/222533_abda701e_4835367.png "屏幕截图.png")|![输入图片说明](https://images.gitee.com/uploads/images/2021/0331/222547_db49f0b8_4835367.png "屏幕截图.png")   |
-|![输入图片说明](https://images.gitee.com/uploads/images/2021/0331/222611_7ffd378b_4835367.png "屏幕截图.png")|![输入图片说明](https://images.gitee.com/uploads/images/2021/0331/222625_55e092f3_4835367.png "屏幕截图.png")   |
-
-### 联系我们
-
-- 申请加入：[contact@pearadmin.com](mailto:contact@pearadmin.com)
-- 意见反馈：[contact@pearadmin.com](mailto:contact@pearadmin.com)
-- 社区交流：[➀ 682110771](https://qm.qq.com/cgi-bin/qm/qr?k=wguN0SYYFVTX9K-5Muf36E_J77bCzdDD&authKey=Ye5voDJGOphYUvypWJHOEyHoYBcgzk1l7djAS4fWcmls1jybLnYjwLrzwsS6Jdo3&group_code=682110771), [➁ 864581125](https://jq.qq.com/?_wv=1027&k=3K8GjF2G)
-
-### 开源共建
-
-<p style="padding:10px;"  width="90%">
-
-1. 欢迎提交 [pull request](https://gitee.com/pear-admin/Pear-Admin-Layui/pulls)，注意对应提交对应 `master` 分支
-
-2. 欢迎提交 [issue](https://gitee.com/pear-admin/Pear-Admin-Layui/issues)，请写清楚遇到问题的原因、开发环境、复显步骤。
-
-</p>
-
-感谢每一位贡献代码的朋友。
-
-如果对您有帮助，您可以点右上角 💘Star💘支持
+1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
+2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
+3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解 Gitee 上的优秀开源项目
+4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
+5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
+6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)

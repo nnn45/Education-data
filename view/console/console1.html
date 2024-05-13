@@ -13,7 +13,7 @@
 
 <body class="pear-container">
 	<div>
-		<div class="layui-row layui-col-space10" >
+		<div class="layui-row layui-col-space10">
 			<div class="layui-col-xs6 layui-col-md3">
 				<div class="layui-card top-panel">
 					<div class="layui-card-header">今日访问</div>
@@ -188,7 +188,7 @@
 			</div>
 		</div>
 		<div class="layui-row layui-col-space10">
-			<div class="layui-col-md9">
+			<div class="layui-col-md8">
 				<div class="layui-card">
 					<div class="layui-card-body">
 						<div class="layui-tab custom-tab layui-tab-brief" lay-filter="docDemoTabBrief">
@@ -197,22 +197,34 @@
 						</div>
 					</div>
 				</div>
-		</div>
-			<div class="layui-col-md3">
+			</div>
+			<div class="layui-col-md4">
 				<div class="layui-card">
-					<div class="layui-card-header">今日课程热度排行</div>
+					<div class="layui-card-header">课程热度排行</div>
 					<div class="layui-card-body">
 						<ul class="list">
-							<li class="list-item"><span class="title">Python数据可视化实战</span><span class="footer">浏览:2330</span></li>
-							<li class="list-item"><span class="title">TensorFlow2深度学习实战</span><span class="footer">浏览:2234</span></li>
-							<li class="list-item"><span class="title">项目实操：旅游公司客户流失风险预测分析</span><span class="footer">浏览:1256</span></li>
-							<li class="list-item"><span class="title">深度学习基础-人工神经网</span><span class="footer">浏览:1190</span></li>
-							<li class="list-item"><span class="title">项目实操：旅游公司客户流失风险预测分析</span><span class="footer">浏览:1256</span></li>
-							<li class="list-item"><span class="title">深度学习基础-人工神经网</span><span class="footer">浏览:1190</span></li>
-							<li class="list-item"><span class="title">MySQL数据分析基础-V2</span><span class="footer">浏览:980</span></li>
-							<li class="list-item"><span class="title">机器人概述</span><span class="footer">浏览:760</span></li>
-							<li class="list-item"><span class="title">广告日志数据采集系统</span><span class="footer">浏览:690</span></li>
-							<li class="list-item"><span class="title">自然语言概述</span><span class="footer">浏览:540</span></li>
+							<li class="list-item"><span class="title">2915-大数据技术应用（Python方向）</span><span
+									class="footer">学习:543</span></li>
+							<li class="list-item"><span class="title">6148-数据分析师（高级）</span><span
+									class="footer">学习:467</span></li>
+							<li class="list-item"><span class="title">5076-Python技术应用（高级）</span><span
+									class="footer">学习:419</span></li>
+							<li class="list-item"><span class="title">2676-大数据技术应用（高级-Python方向）</span><span
+									class="footer">学习:348</span></li>
+							<li class="list-item"><span class="title">11975-大数据应用开发（Python）职业技能等级证书（中级）</span><span
+									class="footer">学习:347</span></li>
+							<li class="list-item"><span class="title">11164-大数据应用开发（Python）职业技能等级证书（中级）</span><span
+									class="footer">学习:311</span></li>
+							<li class="list-item"><span class="title">2625-大数据技术应用（Python方向）</span><span
+									class="footer">学习:290</span></li>
+							<li class="list-item"><span class="title">6845-Python数据分析概述</span><span
+									class="footer">学习:249</span></li>
+							<li class="list-item"><span class="title">779-Python数据分析概述</span><span
+									class="footer">学习:245</span></li>
+							<li class="list-item"><span class="title">9781-大数据应用开发（Python）职业技能等级证书（初级）</span><span
+									class="footer">学习:239</span>
+							</li>
+
 						</ul>
 					</div>
 				</div>
@@ -261,27 +273,27 @@
 			count.up("value1", {
 				time: 4000,
 				num: 50030,
-				
+
 				regulator: 50
 			})
 
 			count.up("value2", {
 				time: 4000,
 				num: 678,
-				
+
 				regulator: 50
 			})
 
 			count.up("value3", {
 				time: 4000,
 				num: 580,
-				
+
 				regulator: 50
 			})
 
 			count.up("value4", {
 				time: 4000,
-				
+
 				num: 96,
 				regulator: 50
 			})
@@ -291,23 +303,26 @@
 			const colorList = ["#9E87FF", '#73DDFF', '#fe9a8b', '#F56948', '#9E87FF']
 			var option = {
 				xAxis: {
-					name: "班级ID",
+					name: "课程ID",
 					type: 'category',
-					data: [916, 1698, 1487, 833, 2399, 2324, 803, 1794, 104, 2190]
+					data: [2915, 6148, 5076,2676, 11975, 11164,2625,6845, 779, 9781]
 				},
 				yAxis: {
-					name: "班级人数",
+					name: "学习人数",
 					type: 'value'
 				},
 				series: [
 					{
 						data: [543, 467, 419, 348, 347, 311, 290, 249, 245, 239],
 						type: 'bar'
+
+						
 					}
+
 				], title:
 				{
 					left: 'center',
-					text: '班级人数排名前十名'
+					text: '课程热度排名前十名'
 				}
 			};
 			echartsRecords.setOption(option);

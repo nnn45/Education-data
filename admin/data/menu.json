@@ -38,4 +38,28 @@
 		"type": 1,
 		"openType": "_iframe",
 		"href": "view/console/console4.html"
+	},
+	{
+		"id": 17,
+		"title": "分析预测",
+		"icon": "layui-icon layui-icon-console",
+		"type": 1,
+		"openType": "_iframe",
+		"href": "view/console/consoleYC.html"
+	},
+	{
+		"id": 16,
+		"title": "知识图谱",
+		"icon": "layui-icon layui-icon-console",
+		"type": 1,
+		"openType": "_iframe",
+		"href": "view/console/consoleKG.html"
+	},
+	{
+		"id": 18,
+		"title": "分析报告",
+		"icon": "layui-icon layui-icon-console",
+		"type": 1,
+		"openType": "_iframe",
+		"href": "view/console/consolePDF.html"
 	}]
