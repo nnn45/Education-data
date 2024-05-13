@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关系图</title>
+    <!-- 引入 ECharts -->
+    <script src="../../component/shujudaping/js/echarts.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            max-width: 100%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        #chart {
+            width: 100%;
+            height: 800px;
+        }
+
+        .dropdown {
+            margin-bottom: 20px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <!-- 下拉框 -->
+        <div class="dropdown">
+            <label for="relation-select">选择课程体系：</label>
+            <select id="relation-select">
+                <option value="Python学习路径">Python学习路径</option>
+
+                <option value="机器学习">机器学习</option>
+                <option value="深度学习">深度学习</option>
+                <option value="Scala">Scala</option>
+               
+            </select>
+        </div>
+        <!-- 图表容器 -->
+        <div id="chart"></div>
+    </div>
+
+    <script>
+        // 初始化echarts实例
+        var myChart = echarts.init(document.getElementById('chart'));
+
+        // 初始数据
+        var initialData = {
+            "Python学习路径": {
+                "Python认识": {
+                    nodes: [
+                        { name: 'Python认识' },
+                        { name: '在Windows系统平台安装Python与配置环境变量' },
+                        { name: '了解常用Python IDE并创建一个应声虫程序' }
+                    ],
+                    links: [
+                        { source: 'Python认识', target: '在Windows系统平台安装Python与配置环境变量' },
+                        { source: 'Python认识', target: '了解常用Python IDE并创建一个应声虫程序' }
+                    ]
+                },
+                "Python基础语法": {
+                    nodes: [
+                        { name: 'Python基础语法' },
+                        { name: 'Python的固定语法' },
+                        { name: '了解Python变量与相互转化数值型变量' },
+                        { name: '字符串类型基本操作' },
+                        { name: '字符串内建函数' },
+                        { name: '掌握常用操作运算符及优先级' }
+                    ],
+                    links: [
+                        { source: 'Python基础语法', target: 'Python的固定语法' },
+                        { source: 'Python基础语法', target: '了解Python变量与相互转化数值型变量' },
+                        { source: 'Python基础语法', target: '字符串类型基本操作' },
+                        { source: 'Python基础语法', target: '字符串内建函数' },
+                        { source: 'Python基础语法', target: '掌握常用操作运算符及优先级' }
+                    ]
+                },
+                "数据结构与容器": {
+                    nodes: [
+                        { name: '数据结构与容器' },
+                        { name: '认识数据结构与列表' },
+                        { name: '列表的增删改查' },
+                        { name: '列表推导式' },
+                        { name: '元组' },
+                        { name: '字典' },
+                        { name: '集合' }
+                    ],
+                    links: [
+                        { source: '数据结构与容器', target: '认识数据结构与列表' },
+                        { source: '数据结构与容器', target: '列表的增删改查' },
+                        { source: '数据结构与容器', target: '列表推导式' },
+                        { source: '数据结构与容器', target: '元组' },
+                        { source: '数据结构与容器', target: '字典' },
+                        { source: '数据结构与容器', target: '集合' }
+                    ]
+                },
+                "流程控制": {
+                    nodes: [
+                        { name: '流程控制' },
+                        { name: '条件分支语句' },
+                        { name: '循环' },
+                        { name: '嵌套循环与多变量迭代、列表解析' }
+                    ],
+                    links: [
+                        { source: '流程控制', target: '条件分支语句' },
+                        { source: '流程控制', target: '循环' },
+                        { source: '流程控制', target: '嵌套循环与多变量迭代、列表解析' }
+                    ]
+                },
+                "函数与模块": {
+                    nodes: [
+                        { name: '函数与模块' },
+                        { name: '自定义函数' },
+                        { name: '调用自定义函数' },
+                        { name: '嵌套函数、全局变量与局部变量' },
+                        { name: '匿名函数与高阶函数' },
+                        { name: '存储并导入函数模块' }
+                    ],
+                    links: [
+                        { source: '函数与模块', target: '自定义函数' },
+                        { source: '函数与模块', target: '调用自定义函数' },
+                        { source: '函数与模块', target: '嵌套函数、全局变量与局部变量' },
+                        { source: '函数与模块', target: '匿名函数与高阶函数' },
+                        { source: '函数与模块', target: '存储并导入函数模块' }
+                    ]
+                },
+                "面向对象编程": {
+                    nodes: [
+                        { name: '面向对象编程' },
+                        { name: '认识面向对象编程' },
+                        { name: '类与绑定self' },
+                        { name: '类的专有方法' },
+                        { name: '创建对象' },
+                        { name: '迭代器' },
+                        { name: '继承与其他方法' }
+                    ],
+                    links: [
+                        { source: '面向对象编程', target: '认识面向对象编程' },
+                        { source: '面向对象编程', target: '类与绑定self' },
+                        { source: '面向对象编程', target: '类的专有方法' },
+                        { source: '面向对象编程', target: '创建对象' },
+                        { source: '面向对象编程', target: '迭代器' },
+                        { source: '面向对象编程', target: '继承与其他方法' }
+                    ]
+                },
+                "文件操作": {
+                    nodes: [
+
+                        { name: '文件操作' },
+                        { name: '认识文件、读取整个文件' },
+                        { name: 'with语句读取文件与设置工作路径' },
+                        { name: '读取txt、csv文件' },
+                        { name: 'os模块与shutil模块' }
+                    ],
+                    links: [
+                        { source: '文件操作', target: '认识文件、读取整个文件' },
+                        { source: '文件操作', target: 'with语句读取文件与设置工作路径' },
+                        { source: '文件操作', target: '读取txt、csv文件' },
+                        { source: '文件操作', target: 'os模块与shutil模块' }
+                    ]
+                },
+                // 新加入的数据
+                "Python学习路径": {
+                    nodes: [
+                        { name: 'Python学习路径' },
+                     ],
+                    links: [
+                        { source: 'Python学习路径', target: 'Python认识' },
+                        { source: 'Python学习路径', target: 'Python基础语法' },
+                        { source: 'Python学习路径', target: '数据结构与容器' },
+                        { source: 'Python学习路径', target: '流程控制' },
+                        { source: 'Python学习路径', target: '函数与模块' },
+                        { source: 'Python学习路径', target: '面向对象编程' },
+                        { source: 'Python学习路径', target: '文件操作' }
+                    ]
+                }
+            },
+            "机器学习": {
+
+                "《机器学习算法Python实战》介绍": {
+                    nodes: [
+                        { name: '机器学习绪论' },
+                        { name: '引言' },
+                        { name: '模型评估与选择' },
+                        { name: '基本术语' },
+                        { name: '回归分析' },
+                        { name: '假设空间' },
+                        { name: '决策树' },
+                        { name: '归纳偏好' },
+                        { name: '神经网络' },
+                        { name: 'KNN&朴素贝叶斯' },
+                        { name: '经验误差与过拟合' },
+                        { name: '聚类分析' },
+                        { name: '评估方法' },
+                        { name: '关联规则' },
+                        { name: '性能度量' },
+                        { name: '支持向量机' },
+                        { name: '智能推荐' },
+                        { name: '回归分析与线性模型' },
+                        { name: '深度学习' },
+                        { name: 'BP神经网络输出层权值修正' },
+                        { name: '数据样本代入整体流程' },
+                        { name: '分类步骤及算法流程' },
+                        { name: 'KNN算法的优缺点' },
+                        { name: '朴素贝叶斯原理' },
+                        { name: '朴素贝叶斯-拉普拉斯平滑处理' },
+                        { name: '聚类分析概述' },
+                        { name: '相似性度量' },
+                        { name: 'K-Means算法分析流程' },
+                        { name: '聚类结果性能度量-外部指标' },
+                        { name: '聚类结果性能度量-内部指标' },
+                        { name: 'K-Medoids概述' },
+                        { name: '层次聚类概述' },
+                        { name: '密度聚类（DBSCAN）概述' },
+                        { name: '关联规则简介' },
+                        { name: 'Apriori算法原理' },
+                        { name: 'Apriori算法示例' },
+                        { name: '间隔与支持向量' },
+                        { name: '支持向量机对偶问题' },
+                        { name: '核函数' },
+                        { name: '软间隔与正则化' },
+                        { name: '推荐系统概述' },
+                        { name: '协同过滤' },
+                        { name: '机器学习总概述-有监督指导学习' },
+                        { name: '机器学习总概述-无监督指导学习' }
+                    ],
+                    links: [
+                        { source: '机器学习绪论', target: '引言' },
+                        { source: '机器学习绪论', target: '模型评估与选择' },
+                        { source: '机器学习绪论', target: '基本术语' },
+                        { source: '回归分析', target: '假设空间' },
+                        { source: '回归分析', target: '决策树' },
+                        { source: '回归分析', target: '神经网络' },
+                        { source: '回归分析', target: 'KNN&朴素贝叶斯' },
+                        { source: '回归分析', target: '经验误差与过拟合' },
+                        { source: '聚类分析', target: '评估方法' },
+                        { source: '聚类分析', target: '关联规则' },
+                        { source: '聚类分析', target: '性能度量' },
+                        { source: '聚类分析', target: '支持向量机' },
+                        { source: '聚类分析', target: '智能推荐' },
+                        { source: '回归分析与线性模型', target: '深度学习' },
+                        { source: '回归分析与线性模型', target: 'BP神经网络输出层权值修正' },
+                        { source: '回归分析与线性模型', target: '数据样本代入整体流程' },
+                        { source: '回归分析与线性模型', target: '分类步骤及算法流程' },
+                        { source: '回归分析与线性模型', target: 'KNN算法的优缺点' },
+                        { source: '回归分析与线性模型', target: '朴素贝叶斯原理' },
+                        { source: '回归分析与线性模型', target: '朴素贝叶斯-拉普拉斯平滑处理' },
+                        { source: '聚类分析概述', target: '相似性度量' },
+                        { source: '聚类分析概述', target: 'K-Means算法分析流程' },
+                        { source: '聚类分析概述', target: '聚类结果性能度量-外部指标' },
+                        { source: '聚类分析概述', target: '聚类结果性能度量-内部指标' },
+                        { source: '聚类分析概述', target: 'K-Medoids概述' },
+                        { source: '聚类分析概述', target: '层次聚类概述' },
+                        { source: '聚类分析概述', target: '密度聚类（DBSCAN）概述' },
+                        { source: '关联规则简介', target: 'Apriori算法原理' },
+                        { source: '关联规则简介', target: 'Apriori算法示例' },
+                        { source: '支持向量机', target: '间隔与支持向量' },
+                        { source: '支持向量机', target: '支持向量机对偶问题' },
+                        { source: '支持向量机', target: '核函数' },
+                        { source: '支持向量机', target: '软间隔与正则化' },
+                        { source: '智能推荐', target: '推荐系统概述' },
+                        { source: '智能推荐', target: '协同过滤' },
+                        { source: '机器学习总概述-有监督指导学习', target: '机器学习总概述-无监督指导学习' }
+
+                    ]
+
+
+
+                }
+
+            },
+            "深度学习": {
+
+                "第一章": {
+                    nodes: [{ name: '深度学习介绍' }, { name: '深度学习VS传统机器学习算法' }, { name: '卷积神经网络（CNN）过程及原理' }, { name: '丢失了二维信息的传统网络结构' }, { name: '卷积过程的TensorFLow实现' }],
+                    links: [{ source: '深度学习介绍', target: '深度学习VS传统机器学习算法' }, { source: '深度学习VS传统机器学习算法', target: '卷积神经网络（CNN）过程及原理' }, { source: '卷积神经网络（CNN）过程及原理', target: '丢失了二维信息的传统网络结构' }, { source: '丢失了二维信息的传统网络结构', target: '卷积过程的TensorFLow实现' }]
+                },
+                "第二章": {
+                    nodes: [{ name: '初识卷积神经网络（CNN）' }, { name: '人脸识别介绍' }, { name: '权值共享-全连接与局部连接' }, { name: '人脸识别的数据准备' }, { name: 'CNN的核心操作-卷积' }, { name: '搭建CNN网络' }, { name: '池化与再卷积' }, { name: 'CNN网络模型训练与保存' }, { name: '高维输入与多filter' }, { name: 'CNN网络模型加载与调用' }],
+                    links: [{ source: '初识卷积神经网络（CNN）', target: '人脸识别介绍' }, { source: '人脸识别介绍', target: '权值共享-全连接与局部连接' }, { source: '权值共享-全连接与局部连接', target: '人脸识别的数据准备' }, { source: '人脸识别的数据准备', target: 'CNN的核心操作-卷积' }, { source: 'CNN的核心操作-卷积', target: '搭建CNN网络' }, { source: '搭建CNN网络', target: '池化与再卷积' }, { source: '池化与再卷积', target: 'CNN网络模型训练与保存' }, { source: 'CNN网络模型训练与保存', target: '高维输入与多filter' }, { source: '高维输入与多filter', target: 'CNN网络模型加载与调用' }]
+                },
+                "第三章": {
+                    nodes: [{ name: '卷积与池化操作的TensorFlow实现' }, { name: '可视化卷积与池化结果' }, { name: '实现图像边缘检测' }],
+                    links: [{ source: '卷积与池化操作的TensorFlow实现', target: '可视化卷积与池化结果' }, { source: '可视化卷积与池化结果', target: '实现图像边缘检测' }]
+                },
+                "第四章": {
+                    nodes: [{ name: '人脸识别案例背景与目标' }, { name: '人脸识别整体流程' }, { name: 'mtcnn人脸检测介绍' }, { name: '利用opencv调用摄像头获取图片数据' }, { name: '批量获取图片数据并存储' }, { name: '对获取图片进行人脸检测' }, { name: '对人脸做灰度处理' }],
+                    links: [{ source: '人脸识别案例背景与目标', target: '人脸识别整体流程' }, { source: '人脸识别整体流程', target: 'mtcnn人脸检测介绍' }, { source: 'mtcnn人脸检测介绍', target: '利用opencv调用摄像头获取图片数据' }, { source: '利用opencv调用摄像头获取图片数据', target: '批量获取图片数据并存储' }, { source: '批量获取图片数据并存储', target: '对获取图片进行人脸检测' }, { source: '对获取图片进行人脸检测', target: '对人脸做灰度处理' }]
+                },
+                "第五章": {
+                    nodes: [{ name: '案例准备-构建数据获取与处理类' }, { name: '数据整理-将处理好的灰度图转为数组数据' }],
+                    links: [{ source: '案例准备-构建数据获取与处理类', target: '数据整理-将处理好的灰度图转为数组数据' }]
+                },
+                "第六章": {
+                    nodes: [{ name: 'CNN核心结果与操作的函数定义' }, { name: '网络结构搭建：实现CNN网络结构搭建' }, { name: '网络结构搭建：实现CNN的全连接与输出操作' }],
+                    links: [{ source: 'CNN核心结果与操作的函数定义', target: '网络结构搭建：实现CNN网络结构搭建' }, { source: '网络结构搭建：实现CNN网络结构搭建', target: '网络结构搭建：实现CNN的全连接与输出操作' }]
+                },
+                "第七章": {
+                    nodes: [{ name: '模型训练与保存操作' }, { name: '将模型封装成类' }],
+                    links: [{ source: '模型训练与保存操作', target: '将模型封装成类' }]
+                },
+                "第八章": {
+                    nodes: [{ name: '人脸识别案例-调用摄像头获取实时头像并进行数据预处理' }, { name: '获取实时头像并进行数据预处理' }, { name: '模型应用：实时识别摄像头抓拍的人脸图片' }],
+                    links: [{ source: '人脸识别案例-调用摄像头获取实时头像并进行数据预处理', target: '获取实时头像并进行数据预处理' }, { source: '获取实时头像并进行数据预处理', target: '模型应用：实时识别摄像头抓拍的人脸图片' }]
+                }
+            },
+            "Scala":{
+                "模块1": {
+        nodes: [{name: 'Scala简介'}, {name: 'Scala特性'}, {name: 'Scala安装与简单使用'}],
+        links: [{source: 'Scala简介', target: 'Scala特性'}, {source: 'Scala特性', target: 'Scala安装与简单使用'}]
+    },
+    "模块2": {
+        nodes: [{name: '数据类型'}, {name: '常量和变量'}, {name: '表达式'}, {name: '数组'}, {name: '函数'}, {name: '操作练习'}, {name: '定义函数识别号码类型实现'}],
+        links: [{source: '数据类型', target: '常量和变量'}, {source: '常量和变量', target: '表达式'}, {source: '表达式', target: '数组'}, {source: '数组', target: '函数'}, {source: '函数', target: '操作练习'}, {source: '操作练习', target: '定义函数识别号码类型实现'}]
+    },
+    "模块3": {
+        nodes: [{name: 'if判断'}, {name: '循环及统计广州号码段数量实现'}],
+        links: [{source: 'if判断', target: '循环及统计广州号码段数量实现'}]
+    },
+    "模块4": {
+        nodes: [{name: 'List'}, {name: 'Set'}, {name: 'Map'}, {name: '元组'}, {name: '函数组合器'}, {name: '筛选某个地区的所有手机号码段实现'}],
+        links: [{source: 'List', target: 'Set'}, {source: 'Set', target: 'Map'}, {source: 'Map', target: '元组'}, {source: '元组', target: '函数组合器'}, {source: '函数组合器', target: '筛选某个地区的所有手机号码段实现'}]
+    },
+    "模块5": {
+        nodes: [{name: 'Scala类简单介绍及实例'}, {name: 'Scala Object 简单介绍'}, {name: 'Scala伴生类与伴生对象'}, {name: 'Scala简单模式匹配'}, {name: 'Scala样例类'}, {name: 'Scala读写文件操作'}, {name: 'Scala实现手机号码归属地信息查询程序'}],
+        links: [{source: 'Scala类简单介绍及实例', target: 'Scala Object 简单介绍'}, {source: 'Scala Object 简单介绍', target: 'Scala伴生类与伴生对象'}, {source: 'Scala伴生类与伴生对象', target: 'Scala简单模式匹配'}, {source: 'Scala简单模式匹配', target: 'Scala样例类'}, {source: 'Scala样例类', target: 'Scala读写文件操作'}, {source: 'Scala读写文件操作', target: 'Scala实现手机号码归属地信息查询程序'}]
+    }
+            }
+        };
+
+        // 下拉框
+        var select = document.getElementById('relation-select');
+        select.addEventListener('change', function () {
+            var selectedValue = this.value;
+            var newData = initialData[selectedValue];
+            renderChart(newData);
+        });
+
+        // 渲染图表函数
+        function renderChart(data) {
+            var categories = [];
+            for (var key in data) {
+                categories.push({ name: key });
+            }
+
+            var nodes = [];
+            var links = [];
+            for (var key in data) {
+                var item = data[key];
+                for (var i = 0; i < item.nodes.length; i++) {
+                    nodes.push({
+                        name: item.nodes[i].name,
+                        category: categories.findIndex(c => c.name === key),
+                        symbolSize: 30
+                    });
+                }
+                for (var j = 0; j < item.links.length; j++) {
+                    links.push({
+                        source: item.links[j].source,
+                        target: item.links[j].target
+                    });
+                }
+            }
+
+            var option = {
+                tooltip: {
+                    formatter: '{b}'
+                },
+                legend: {
+                    data: categories.map(c => c.name),
+                    textStyle: {
+                        color: '#333'
+                    }
+                },
+                series: [
+                    {
+                        type: 'graph',
+                        layout: 'force',
+                        force: {
+                            repulsion: 100,
+                            edgeLength: 100
+                        },
+                        roam: true,
+                        label: {
+                            show: true
+                        },
+                        scaleLimit: {
+                            min: 1.5
+                        },
+                        edgeSymbol: ['none', 'arrow'],
+                        edgeSymbolSize: 8,
+                        data: nodes,
+                        links: links,
+                        categories: categories,
+                        lineStyle: {
+                            color: 'source',
+                            curveness: 0.2
+                        }
+                    }
+                ]
+            };
+
+            myChart.setOption(option);
+        }
+
+        // 初始渲染
+        renderChart(initialData["Python学习路径"]);
+    </script>
+</body>
+
+</html>
